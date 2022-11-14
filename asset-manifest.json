@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/email-generator/static/css/main.95165ea1.css",
+    "main.js": "/email-generator/static/js/main.24048ef0.js",
+    "index.html": "/email-generator/index.html",
+    "main.95165ea1.css.map": "/email-generator/static/css/main.95165ea1.css.map",
+    "main.24048ef0.js.map": "/email-generator/static/js/main.24048ef0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.95165ea1.css",
+    "static/js/main.24048ef0.js"
+  ]
+}
