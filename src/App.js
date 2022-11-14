@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { generateEmail } from "./emails/emailGenerator";
 
 function App() {
+  const [amount, setAmount] = useState(1);
+  const [separation, setSeparation] = useState("commanl");
 
   const separateFile = (emailList, separation) => {
-    if (separation === "commanl") {
-      return  emailList.reduce((prev, curr) => `${prev},\n${curr}`);
-    } else if (separation === "comma") {
-      return  emailList.reduce((prev, curr) => `${prev}, ${curr}`);
-    } else {
-      return  emailList.reduce((prev, curr) => `${prev}\n${curr}`);
+    switch(separation) {
+      case "commanl":
+        return  emailList.reduce((prev, curr) => `${prev},\n${curr}`);
+      case "comma":
+        return  emailList.reduce((prev, curr) => `${prev}, ${curr}`);
+      default:
+        return  emailList.reduce((prev, curr) => `${prev}\n${curr}`);
     }
   };
 
@@ -32,18 +35,20 @@ function App() {
           type="number"
           max="40000"
           min="1"
+          value={amount}
+          onChange={({target}) => setAmount(target.value)}
         />
       </label>
 
       <label>
         Separation Type
-        <select defaultValue={"commanl"}>
+        <select defaultValue={"commanl"} onChange={({target}) => setSeparation(target.value)}>
           <option value={"commanl"}>Comma and new line</option>
           <option value={"comma"}>Comma</option>
           <option value={"nl"}>New line</option>
         </select>
       </label>
-      <button onClick={() => downloadFile(50, "nl")}>Download</button>
+      <button onClick={() => downloadFile(amount, separation)}>Download</button>
     </div>
   );
 }
