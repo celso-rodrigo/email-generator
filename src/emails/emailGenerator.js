@@ -1,5 +1,4 @@
 const { nouns, adjectives, emailHost } = require("./data");
-const fs = require("fs").promises;
 
 // Recive an array and return it suffled
 const shuffle = (array) => {
@@ -21,9 +20,9 @@ const randomizeEmail = (noun, returnAmount) => {
   let emailList = [];
 	
   for(let i = 0; i < returnAmount; i++) {
-    const adjective = shuffledAdjective[i - 1];
+    const adjective = shuffledAdjective[i];
     const host = emailHost[Math.floor(Math.random() * emailHost.length)];
-    const randomEmail = `${adjective}${noun}@${host},\n`;
+    const randomEmail = `${adjective}${noun}@${host}`;
     emailList.push(randomEmail);
   }
 
@@ -48,16 +47,4 @@ const generateEmail = (amount) => {
   return emailList;
 };
 
-// Recive an amount(Number) and generate an .txt file with that amount of random emails
-const writeFile = async (amount) => {
-  const emailList = generateEmail(amount);
-  try {
-    await fs.writeFile("./src/emails/random-mails.txt", emailList);
-    return emailList;
-  } catch(err) {
-    console.error(`An error has occurred: ${err}`);
-  }
-  console.log("WORK!");
-};
-
-module.exports = { writeFile };
+module.exports = { generateEmail };

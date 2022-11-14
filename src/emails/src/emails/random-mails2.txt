@@ -1,0 +1,12 @@
+[
+  "undefinedBoy@glass.com,\n",
+  "undefinedInsurance@fake.io,\n",
+  "undefinedHelicopter@coolmail.com,\n",
+  "undefinedArmy@qwertyu.io,\n",
+  "undefinedAnswer@example.io,\n",
+  "undefinedDisease@example.io,\n",
+  "undefinedDress@doom.com,\n",
+  "undefinedRiver@coolmail.com,\n",
+  "undefinedIsland@qwertyu.io,\n",
+  "undefinedGarden@himom.com,\n"
+]
