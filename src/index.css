@@ -1,0 +1,116 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+	background-color: rgb(250, 250, 250);
+	display: flex;
+	justify-content: center;
+	padding-top: 10vh;
+}
+
+.main {
+	box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px,
+	rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+	display: flex;
+	padding: 30px 50px;
+	gap: 25px;
+	flex-direction: column;
+	align-items: center;
+  width: 450px;
+	height: 300px;
+}
+
+.title {
+	font-size: 2rem;
+	font-weight: 200;
+	padding: 0 10px;
+}
+
+.separation-input, .amount-input {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.separation-input select, .amount-input input {
+	display: flex;
+	text-align: center;
+	width: 200px;
+	padding: 5px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid black;
+}
+
+.problem {
+	text-align: center;
+	height: 1rem;
+	width: 100%;
+	color: rgb(200, 0, 0);
+}
+
+.download {
+	font-size: 1.1rem;
+	width: 120px;
+	padding: 8px;
+	border-radius: 10px;
+	background-color: rgb(55, 55, 55);
+	color: white;
+	transition: 0.7s;
+}
+
+.download:enabled:hover {
+	letter-spacing: 1px;
+}
+
+.download:disabled {
+	opacity: 50%;
+	cursor: not-allowed;
+}
+
+.loading {
+  animation: loading 0.9s both infinite;
+  border: 7px solid lightgray;
+  border-radius: 100%;
+  border-top-color: rgb(55, 55, 55);
+  height: 60px;
+  margin: auto;
+  transition: 1s;
+  width: 60px;
+}
+
+@keyframes loading {
+
+  to {
+    transform: rotate(2turn);
+  }
+}
+
+@media screen and (max-width: 475px) {
+	body {
+		padding: 0;
+	}
+
+	.main {
+		height: 385px;
+		width: 90vw;
+		min-width: 240px;
+	}
+
+	.separation-input, .amount-input {
+		flex-direction: column;
+		gap: 10px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.problem {
+		height: 2rem;
+	}
+}

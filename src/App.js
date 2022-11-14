@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { generateEmail } from "./emails/emailGenerator";
+import "./index.css";
 
 function App() {
-  const [amount, setAmount] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [amount, setAmount] = useState(0);
   const [separation, setSeparation] = useState("commanl");
+  const [problem, setProblem] = useState("Please choose the email amount.");
 
   const separateFile = (emailList, separation) => {
     switch(separation) {
@@ -17,6 +20,7 @@ function App() {
   };
 
   function downloadFile(amount, separation) {
+    setLoading(true);
     const emailList = generateEmail(amount);
     const separatedFile = separateFile(emailList, separation);
     const blob = new Blob([separatedFile], { type: "text/plain" });
@@ -25,22 +29,28 @@ function App() {
     link.download = "random-email.txt";
     link.href = url;
     link.click();
+    setLoading(false);
   }
 
+  const handleInput = (amount) => {
+    if (amount <= 0) return setProblem("You cannot generate less than one email.");
+    if (amount > 40000) return setProblem("You cannot generate more than 40.000 emails.");
+    setProblem("");
+    setAmount(amount);
+  };
+
   return (
-    <div className="App">
-      <label>
+    <fieldset className="main">
+      <legend className="title">Email Generator</legend>
+      <label className="amount-input">
         Email Amount
         <input
           type="number"
-          max="40000"
-          min="1"
-          value={amount}
-          onChange={({target}) => setAmount(target.value)}
+          onChange={({target}) => handleInput(target.value)}
         />
       </label>
 
-      <label>
+      <label className="separation-input">
         Separation Type
         <select defaultValue={"commanl"} onChange={({target}) => setSeparation(target.value)}>
           <option value={"commanl"}>Comma and new line</option>
@@ -48,8 +58,23 @@ function App() {
           <option value={"nl"}>New line</option>
         </select>
       </label>
-      <button onClick={() => downloadFile(amount, separation)}>Download</button>
-    </div>
+
+      {loading 
+        ? <div className="loading" />
+        : (
+          <>
+            {<p className="problem">{problem !== "EMPTY" && problem}</p>}
+            <button
+              disabled={problem.length}
+              onClick={() => downloadFile(amount, separation)}
+              className="download"
+            >
+              Download
+            </button>
+          </>
+        )
+      }
+    </fieldset>
   );
 }
 
