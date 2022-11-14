@@ -1,20 +1,13 @@
+const { nouns, adjectives, emailHost } = require("./data");
 const fs = require("fs").promises;
 
-const adjectives = ["Fast", "Big", "Cool", "Yellow", "Great"];
-const nouns = ["Ball", "Car", "Dart", "Cat", "Card"];
-const emailHost = ["coolmail.com", "fake.io", "glass.com"];
-
+// Recive an array and return it suffled
 const shuffle = (array) => {
   let currentIndex = array.length,  randomIndex;
 
-  // While there remain elements to shuffle.
   while (currentIndex != 0) {
-
-    // Pick a remaining element.
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-
-    // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex], array[currentIndex]];
   }
@@ -22,15 +15,14 @@ const shuffle = (array) => {
   return array;
 };
 
+// Recive a noun(String), a returnAmount(Number) and return an array of emails
 const randomizeEmail = (noun, returnAmount) => {
-  // Set a random position to start getting adjectives from the array
-  const adjectivesIndex = Math.floor(Math.random() * adjectives.length);
+  const shuffledAdjective = shuffle(adjectives);
   let emailList = [];
 	
   for(let i = 0; i < returnAmount; i++) {
-    // adjetive and host make the array loop if the index is invalid
-    const adjective = adjectives[adjectivesIndex % adjectives.length + i];
-    const host = emailHost[0 + i] || emailHost[0];
+    const adjective = shuffledAdjective[i - 1];
+    const host = emailHost[Math.floor(Math.random() * emailHost.length)];
     const randomEmail = `${adjective}${noun}@${host},\n`;
     emailList.push(randomEmail);
   }
@@ -38,29 +30,34 @@ const randomizeEmail = (noun, returnAmount) => {
   return emailList;
 };
 
+// Recive an amount(Number) and return an array of random emails equal the amount
 const generateEmail = (amount) => {
-  // Set the maximum repetition of nouns
-  const nounsRepetition = Math.floor(amount / 10) + 1;
+  const nounsRepetition = amount % 200 
+    ? Math.floor(amount / nouns.length) + 1 
+    : amount / nouns.length;
   const shuffledNouns = shuffle(nouns);
   const emailList = [];
 
-  for(let i = 0; i < amount; i++) {
-    // Get an array of random emails
+  for(let i = 0; emailList.length < amount; i++) {
     const randomEmail = randomizeEmail(shuffledNouns[i], nounsRepetition);
-    emailList.push(...randomEmail);
+    randomEmail.forEach((email) => {
+      if(emailList.length < amount) emailList.push(email);
+    });
   }
   
   return emailList;
 };
 
+// Recive an amount(Number) and generate an .txt file with that amount of random emails
 const writeFile = async (amount) => {
   const emailList = generateEmail(amount);
   try {
     await fs.writeFile("./src/emails/random-mails.txt", emailList);
+    return emailList;
   } catch(err) {
-    console.log(err);
+    console.error(`An error has occurred: ${err}`);
   }
-  console.log("Done!");
+  console.log("WORK!");
 };
 
-writeFile(4);
+module.exports = { writeFile };
