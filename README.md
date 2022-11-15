@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+<h1>Email Generator</h1>
+A simple random email generator.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+***
 
-## Available Scripts
+<details>
+  <summary><h2>Read in English :us:</h2></summary><br />
+  <h3><a href="https://celso-rodrigo.github.io/email-generator">Take a look at the project!</a></h3>
+  <h3>About</h3>
+  <p>A while ago one of my friends was telling me that he can't find a random email generator that can generate multiple different emails at once and i made a really simple one for him using only JavaScript. Now I decided to make it bigger and easier to use.</p>
+  <p>You can generate up to 40.000 different emails and choose a formatting that fits you the most.</p>
+  <br/>
+ 
+  <h3>Installation guide</h3> 
+  <ol>
+    <li>
+      <p>Clone the repository</p>
+      <pre>git@github.com:celso-rodrigo/email-generator.git</pre>
+    </li>
+    <li>
+      <p>Open the repository folder</p>
+    </li>
+    <li>
+      <p>Install NPM packages</p>
+      <pre>npm install</pre>
+    </li>
+    <li>
+      <p>Start the project</p>
+      <pre>npm start</pre>
+    </li>
+  </ol>
+</details>
 
-In the project directory, you can run:
+***
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<details>
+<summary><h2>Leia em português :brazil:</h2></summary><br />
+  <h3><a href="https://celso-rodrigo.github.io/email-generator/">Dê uma olhada no projeto!</a></h3>
+  <h3>Sobre</h3>
+   <p>Um tempo atrás um amigo estava me dizendo que não conseguia encontrar um gerador de emails aleatórios que gerasse múltiplos emails únicos de uma só vez então fiz um para ele bem simples usando apenas JavaScript. Agora eu decidi torná-lo maior e mais simples de usar.</p>
+  <p>Você pode gerar até 40.000 emails únicos formatados da maneira que você preferir.</p>
+ 
+  <br/>
+ 
+  <h3>Guia de instalação</h3> 
+  <ol>
+    <li>
+      <p>Clone o repositório</p>
+			<pre>git clone git@github.com:celso-rodrigo/email-generator.git</pre>
+    </li>
+    <li>
+      <p>Abra a pasta do repositório</p>
+    </li>
+    <li>
+      <p>Instale as dependências</p>
+      <pre>npm install</pre>
+    </li>
+    <li>
+      <p>Inicie o projetot</p>
+      <pre>npm start</pre>
+    </li>
+  </ol>
+</details>
