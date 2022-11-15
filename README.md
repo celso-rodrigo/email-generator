@@ -37,8 +37,8 @@ A simple random email generator.
 <summary><h2>Leia em português :brazil:</h2></summary><br />
   <h3><a href="https://celso-rodrigo.github.io/email-generator/">Dê uma olhada no projeto!</a></h3>
   <h3>Sobre</h3>
-   <p>Um tempo atrás um amigo estava me dizendo que não conseguia encontrar um gerador de emails aleatórios que gerasse múltiplos emails únicos de uma só vez então fiz um para ele bem simples usando apenas JavaScript. Agora eu decidi torná-lo maior e mais simples de usar.</p>
-  <p>Você pode gerar até 40.000 emails únicos formatados da maneira que você preferir.</p>
+  <p>Um tempo atrás um amigo estava me dizendo que não conseguia encontrar uma aplicação que gerasse múltiplos emails aleatórios únicos de uma só vez, então fiz um para ele bem simples usando apenas JavaScript. Agora eu decidi torná-lo maior e mais fácil de usar.</p>
+  <p>Nessa aplicação você pode gerar até 40.000 emails únicos e formatados da maneira que você preferir com apenas alguns clicks.</p>
  
   <br/>
  
